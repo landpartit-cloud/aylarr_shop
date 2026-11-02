@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#17130f">
+<title>آیلار شاپ | انتخابی از جنس زیبایی</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{--ink:#211b17;--muted:#8a7c70;--cream:#f7f2eb;--paper:#fffdf9;--gold:#b88b52;--gold2:#e5c99d;--line:#e9dfd3;--rose:#d9a9a2;--shadow:0 24px 70px #3b28151a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:"Vazirmatn",sans-serif}
+button,input{font:inherit}
+button{cursor:pointer}
+.announcement{background:#17130f;color:#f8eee0;text-align:center;padding:9px 12px;font-size:12px;letter-spacing:.3px}
+.announcement b{color:#e7c99d}
+.topbar{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 5.5%;background:#fffdf9ef;backdrop-filter:blur(16px);position:sticky;top:0;z-index:20;border-bottom:1px solid #e9dfd399}
+.brand{font-size:25px;font-weight:800;letter-spacing:-1px}
+.brand span{color:var(--gold)}
+.nav{display:flex;gap:28px;align-items:center}
+.nav a{color:#51463d;text-decoration:none;font-size:13px;transition:.25s}
+.nav a:hover{color:var(--gold)}
+.actions{display:flex;gap:10px;align-items:center}
+.iconbtn{border:1px solid var(--line);background:#fff;border-radius:50%;width:41px;height:41px;display:grid;place-items:center;color:var(--ink);position:relative}
+.count{position:absolute;top:-5px;left:-4px;background:var(--gold);color:white;border-radius:50%;font-size:10px;min-width:17px;height:17px;display:grid;place-items:center}
+.menuBtn{display:none}
+
+.hero{min-height:590px;position:relative;overflow:hidden;background:#2a211b;color:white;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:65px 8%}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#1d1712e8 0%,#1d171288 48%,#1d171222 100%),url('https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1800&q=90') center/cover;transform:scale(1.02}
+.hero:after{content:"";position:absolute;width:430px;height:430px;border:1px solid #d8b78255;border-radius:50%;right:-170px;bottom:-230px;box-shadow:0 0 0 35px #d8b7820c,0 0 0 80px #d8b78208}
+.heroText,.heroBadge{position:relative;z-index:1}
+.eyebrow{font-size:12px;letter-spacing:3px;color:#e5c99d}
+.hero h1{font-size:clamp(40px,6vw,76px);line-height:1.35;margin:20px 0 16px;font-weight:500}
+.hero h1 em{font-style:normal;color:#e5c99d}
+.hero p{color:#e7ddd2;max-width:440px;line-height:2.2;font-size:14px}
+.primary{border:0;background:linear-gradient(120deg,#d9b57e,#a97942);color:#21180f;padding:14px 28px;border-radius:3px;font-weight:700;box-shadow:0 12px 30px #0003;transition:.25s}
+.primary:hover{transform:translateY(-3px);box-shadow:0 17px 35px #0005}
+.hero .primary{margin-top:18px}
+.heroBadge{justify-self:end;align-self:end;margin-bottom:35px;border:1px solid #e5c99d88;background:#211a1570;backdrop-filter:blur(12px);padding:24px 27px;max-width:220px}
+.heroBadge strong{font-size:29px;color:#e5c99d;display:block}
+.heroBadge small{color:#eee1d0;line-height:2}
+
+.section{padding:82px 6%}
+.sectionHead{display:flex;align-items:end;justify-content:space-between;margin-bottom:30px}
+.sectionHead h2{font-size:30px;margin:5px 0;font-weight:600}
+.sectionHead p{font-size:13px;color:var(--muted);margin:0}
+.overline{font-size:11px;color:var(--gold);letter-spacing:2px}
+.textLink{color:#8c6339;text-decoration:none;font-size:13px;border-bottom:1px solid #c8a477;padding-bottom:5px}
+
+.categoryGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+.category{height:245px;position:relative;overflow:hidden;background:#ddd;border-radius:4px;color:white;text-decoration:none}
+.category img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.category:hover img{transform:scale(1.08)}
+.category:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,#100c0bd9)}
+.category span{position:absolute;z-index:1;bottom:20px;right:20px;font-size:18px}
+
+.productsSection{background:#fffdf9}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 25px}
+.filter{border:1px solid var(--line);background:transparent;padding:9px 18px;border-radius:30px;font-size:12px;color:#66594e}
+.filter.active,.filter:hover{background:#211b17;color:#fff;border-color:#211b17}
+.productGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.product{background:white;border:1px solid #eee6dc;position:relative;transition:.3s;min-width:0}
+.product:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.productImage{height:260px;position:relative;overflow:hidden;background:#f1eae1}
+.productImage img{width:100%;height:100%;object-fit:cover;transition:transform .65s}
+.product:hover .productImage img{transform:scale(1.06)}
+.tag{position:absolute;top:13px;right:13px;background:#fffdf0;color:#89663e;padding:5px 10px;font-size:10px}
+.heart{position:absolute;top:12px;left:12px;border:0;background:#fffE;border-radius:50%;width:34px;height:34px;font-size:18px;color:#6d5544}
+.heart.liked{color:#c65b68}
+.productInfo{padding:16px}
+.productInfo h3{font-size:14px;font-weight:500;margin:0 0 9px}
+.productInfo p{font-size:11px;color:var(--muted);margin:0 0 13px}
+.priceRow{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.price{font-weight:700;font-size:14px}
+.old{font-size:11px;color:#aaa;text-decoration:line-through;margin-left:6px}
+.add{border:1px solid #c9a77d;background:white;color:#805a32;padding:7px 12px;font-size:11px}
+.add:hover{background:#211b17;color:white;border-color:#211b17}
+
+.editorial{background:#211a15;color:#fff;display:grid;grid-template-columns:1.1fr .9fr;min-height:390px;overflow:hidden}
+.editorialImage{min-height:390px;background:url('https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1200&q=85') center/cover}
+.editorialText{padding:65px 9%;align-self:center}
+.editorialText h2{font-size:34px;font-weight:500;line-height:1.6}
+.editorialText p{color:#d3c6b8;line-height:2.2;font-size:13px}
+.editorialText a{display:inline-block;color:#e5c99d;text-decoration:none;margin-top:15px;border-bottom:1px solid #b88b52;padding-bottom:5px}
+
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;background:#f0e8dd;padding:38px 6%}
+.benefit{text-align:center;padding:10px}
+.benefit b{display:block;font-size:14px;margin:10px}
+.benefit span{font-size:11px;color:var(--muted)}
+.benefit i{font-style:normal;font-size:24px;color:var(--gold)}
+
+.newsletter{padding:65px 6%;text-align:center;background:#e8ddd0}
+.newsletter h2{font-size:26px;font-weight:500;margin:0 0 8px}
+.newsletter p{font-size:13px;color:#77685b}
+.subscribe{display:flex;max-width:440px;margin:24px auto 0}
+.subscribe input{flex:1;min-width:0;border:1px solid #d6c7b6;background:#fff;padding:13px 15px;outline:none}
+.subscribe button{border:0;background:#211b17;color:white;padding:0 20px}
+
+footer{background:#17130f;color:#eee4d8;padding:55px 6% 25px}
+.footerGrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:35px}
+.footerBrand p{color:#b8aa9c;line-height:2.2;font-size:12px;max-width:300px}
+.footerCol h4{font-size:14px;color:#e5c99d}
+.footerCol a{display:block;color:#b8aa9c;text-decoration:none;font-size:12px;margin:13px 0}
+.footerBottom{border-top:1px solid #ffffff20;margin-top:35px;padding-top:20px;color:#8f8174;font-size:11px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+
+.overlay{position:fixed;inset:0;background:#100c0b88;z-index:40;opacity:0;pointer-events:none;transition:.3s}
+.overlay.show{opacity:1;pointer-events:auto}
+.drawer{position:fixed;z-index:41;top:0;left:0;height:100%;width:min(430px,100%);background:#fffdf9;transform:translateX(-105%);transition:.35s;padding:25px;overflow:auto}
+.drawer.show{transform:translateX(0)}
+.drawerHead{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:16px}
+.close{border:0;background:none;font-size:25px}
+.cartItem{display:grid;grid-template-columns:72px 1fr auto;gap:12px;padding:17px 0;border-bottom:1px solid var(--line);align-items:center}
+.cartItem img{width:72px;height:78px;object-fit:cover}
+.cartItem h4{font-size:13px;margin:0 0 6px}
+.cartItem small{color:var(--muted)}
+.qty{display:flex;gap:9px;align-items:center;margin-top:8px}
+.qty button{border:1px solid var(--line);background:white;width:24px;height:24px}
+.remove{border:0;background:none;color:#b36b6b}
+.cartTotal{display:flex;justify-content:space-between;font-weight:700;margin:25px 0}
+.checkout{width:100%}
+.empty{text-align:center;padding:55px 10px;color:var(--muted);font-size:13px}
+
+.modal{position:fixed;z-index:50;inset:0;display:none;place-items:center;padding:20px;background:#100c0b99}
+.modal.show{display:grid}
+.modalBox{background:#fffdf9;max-width:760px;width:100%;display:grid;grid-template-columns:1fr 1fr;position:relative}
+.modalBox img{width:100%;height:100%;max-height:520px;object-fit:cover}
+.modalContent{padding:40px 30px;align-self:center}
+.modalContent h2{font-size:23px}
+.modalContent p{font-size:13px;line-height:2;color:var(--muted)}
+.modalClose{position:absolute;top:10px;left:10px;border:0;background:#fff;border-radius:50%;width:35px;height:35px;font-size:20px}
+
+.toast{position:fixed;bottom:25px;right:50%;transform:translate(50%,20px);background:#211b17;color:#fff;padding:12px 22px;font-size:12px;opacity:0;pointer-events:none;transition:.3s;z-index:70}
+.toast.show{opacity:1;transform:translate(50%,0)}
+
+@media(max-width:900px){
+.nav{gap:14px}
+.productGrid{grid-template-columns:repeat(3,1fr)}
+.categoryGrid{grid-template-columns:repeat(2,1fr)}
+.hero{padding:55px 6%}
+.footerGrid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:650px){
+.announcement{font-size:10px}
+.topbar{height:65px;padding:0 4%}
+.brand{font-size:21px}
+.nav{display:none;position:absolute;top:65px;right:0;left:0;background:#fffdf9;padding:20px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch}
+.nav.open{display:flex}
+.menuBtn{display:grid}
+.actions{gap:6px}
+.iconbtn{width:36px;height:36px}
+.hero{min-height:600px;display:block;padding:95px 7% 40px}
+.hero:before{background:linear-gradient(0deg,#1d1712f2 0%,#1d1712a8 70%,#1d171244 100%),url('https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1000&q=85') center/cover}
+.hero h1{font-size:43px}
+.heroBadge{margin:45px 0 0 auto;padding:15px 18px}
+.section{padding:58px 4%}
+.sectionHead h2{font-size:23px}
+.sectionHead p{font-size:11px}
+.categoryGrid{gap:10px}
+.category{height:190px}
+.category span{font-size:15px;right:13px;bottom:14px}
+.productGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.productImage{height:190px}
+.productInfo{padding:11px}
+.productInfo h3{font-size:12px}
+.productInfo p{font-size:10px}
+.price{font-size:12px}
+.add{padding:7px 8px;font-size:10px}
+.filters{flex-wrap:nowrap;overflow:auto;padding-bottom:8px}
+.filter{white-space:nowrap}
+.editorial{grid-template-columns:1fr}
+.editorialImage{min-height:260px}
+.editorialText{padding:35px 7%}
+.editorialText h2{font-size:27px}
+.benefits{grid-template-columns:repeat(2,1fr);padding:25px 4%;gap:4px}
+.benefit b{font-size:12px}
+.footerGrid{grid-template-columns:1fr 1fr;gap:20px}
+.footerBrand{grid-column:1/-1}
+.footerBottom{font-size:10px}
+.modalBox{grid-template-columns:1fr;max-height:90vh;overflow:auto}
+.modalBox img{height:230px}
+.modalContent{padding:22px}
+.subscribe{max-width:100%}
+}
+
+@media(max-width:370px){
+.productImage{height:160px}
+.productInfo h3{font-size:11px}
+.add{font-size:9px}
+.brand{font-size:18px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="announcement">
+✨ به دنیای انتخاب‌های خاص خوش آمدید
+<b> | ارسال و ثبت سفارش از طریق پیج</b>
+</div>
+
+<header class="topbar">
+<button class="iconbtn menuBtn" id="menuBtn" aria-label="منو">☰</button>
+
+<a class="brand" href="#home" style="text-decoration:none;color:inherit">
+AYLAR<span>R</span>
+<small style="font-size:10px;font-weight:400;color:#9b8060;letter-spacing:2px">SHOP</small>
+</a>
+
+<nav class="nav" id="nav">
+<a href="#home">خانه</a>
+<a href="#categories">دسته‌بندی‌ها</a>
+<a href="#products">فروشگاه</a>
+<a href="#story">درباره ما</a>
+<a href="#contact">ارتباط با ما</a>
+</nav>
+
+<div class="actions">
+<button class="iconbtn" id="searchBtn" aria-label="جستجو">⌕</button>
+<button class="iconbtn" id="cartBtn" aria-label="سبد خرید">
+♧<span class="count" id="cartCount">0</span>
+</button>
+</div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+<div class="heroText">
+<div class="eyebrow">A TOUCH OF ELEGANCE</div>
+<h1>زیبایی، در <em>جزئیات</em> معنا می‌شود.</h1>
+<p>برای لحظه‌هایی که می‌خواهی خاص باشی؛ مجموعه‌ای از اکسسوری‌ها، زیورآلات و انتخاب‌های زیبایی با سلیقه‌ای متفاوت.</p>
+<a class="primary" href="#products" style="display:inline-block;text-decoration:none">مشاهده محصولات　↙</a>
+</div>
+<div class="heroBadge">
+<strong>BE YOURSELF</strong>
+<small>درخشش تو، امضای استایل توست.</small>
+</div>
+</section>
+
+<section class="section" id="categories">
+<div class="sectionHead">
+<div>
+<div class="overline">EXPLORE COLLECTIONS</div>
+<h2>دسته‌بندی محصولات</h2>
+<p>انتخابی برای هر سلیقه و هر لحظه</p>
+</div>
+<a class="textLink" href="#products">همه محصولات</a>
+</div>
+
+<div class="categoryGrid">
+<a class="category" href="#products" data-cat="زیورآلات">
+<img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=85" alt="زیورآلات">
+<span>زیورآلات و بدلیجات ↙</span>
+</a>
+<a class="category" href="#products" data-cat="اکسسوری">
+<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=85" alt="اکسسوری">
+<span>اکسسوری ↙</span>
+</a>
+<a class="category" href="#products" data-cat="آرایشی">
+<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=85" alt="لوازم آرایشی">
+<span>لوازم آرایشی ↙</span>
+</a>
+<a class="category" href="#products" data-cat="مو و زیبایی">
+<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=700&q=85" alt="زیبایی">
+<span>مو و زیبایی ↙</span>
+</a>
+</div>
+</section>
+
+<section class="section productsSection" id="products">
+<div class="sectionHead">
+<div>
+<div class="overline">THE CURATED EDIT</div>
+<h2>محصولات منتخب</h2>
+<p>قطعه‌ای کوچک برای درخشش بزرگ</p>
+</div>
+<a class="textLink" href="#products">کالکشن آیلار</a>
+</div>
+
+<div class="filters" id="filters">
+<button class="filter active" data-filter="همه">همه محصولات</button>
+<button class="filter" data-filter="زیورآلات">زیورآلات</button>
+<button class="filter" data-filter="اکسسوری">اکسسوری</button>
+<button class="filter" data-filter="آرایشی">آرایشی</button>
+<button class="filter" data-filter="مو و زیبایی">مو و زیبایی</button>
+</div>
+
+<div class="productGrid" id="productGrid"></div>
+</section>
+
+<section class="editorial" id="story">
+<div class="editorialImage"></div>
+<div class="editorialText">
+<div class="overline">THE AYLAR MOOD</div>
+<h2>زیبایی، فقط دیده نمی‌شود؛ احساس می‌شود.</h2>
+<p>آیلار شاپ برای کسانی‌ست که به جزئیات اهمیت می‌دهند. اینجا قرار است انتخاب‌های کوچک، حس خوب و استایل منحصربه‌فرد تو را کامل کنند.</p>
+<a href="https://www.instagram.com/aylarr_shop1/" target="_blank" rel="noopener">ما را در اینستاگرام دنبال کن　↗</a>
+</div>
+</section>
+
+<section class="benefits">
+<div class="benefit">
+<i>✧</i>
+<b>انتخاب‌های خاص</b>
+<span>محصولات منتخب با سلیقه آیلار</span>
+</div>
+<div class="benefit">
+<i>♡</i>
+<b>پشتیبانی دوستانه</b>
+<span>پاسخ‌گویی از طریق اینستاگرام</span>
+</div>
+<div class="benefit">
+<i>◇</i>
+<b>تجربه خرید آسان</b>
+<span>سبد خرید و ثبت سفارش ساده</span>
+</div>
+<div class="benefit">
+<i>✦</i>
+<b>توجه به جزئیات</b>
+<span>زیبایی در هر انتخاب</span>
+</div>
+</section>
+
+<section class="newsletter">
+<div class="overline">STAY IN TOUCH</div>
+<h2>از دنیای آیلار جا نمان</h2>
+<p>برای دیدن تازه‌ترین محصولات و پیشنهادها، همراه ما باش.</p>
+<form class="subscribe" id="subscribe">
+<input type="text" placeholder="نام یا آیدی اینستاگرامت" aria-label="نام">
+<button type="submit">همراه شو</button>
+</form>
+</section>
+
+</main>
+
+<footer id="contact">
+<div class="footerGrid">
+
+<div class="footerBrand">
+<a class="brand" href="#home" style="color:white;text-decoration:none">AYLAR<span>R</span></a>
+<p>آیلار شاپ؛ انتخابی از جنس زیبایی، سلیقه و ظرافت. برای مشاهده محصولات جدید و ثبت سفارش از طریق اینستاگرام با ما در ارتباط باش.</p>
+</div>
+
+<div class="footerCol">
+<h4>دسترسی سریع</h4>
+<a href="#home">صفحه اصلی</a>
+<a href="#categories">دسته‌بندی‌ها</a>
+<a href="#products">محصولات</a>
+</div>
+
+<div class="footerCol">
+<h4>راهنمای خرید</h4>
+<a href="#products">راهنمای انتخاب محصول</a>
+<a href="#contact">ثبت سفارش</a>
+<a href="#contact">پشتیبانی</a>
+</div>
+
+<div class="footerCol">
+<h4>شبکه‌های اجتماعی</h4>
+<a href="https://www.instagram.com/aylarr_shop1/" target="_blank" rel="noopener">@aylarr_shop1 ↗</a>
+<a href="https://www.instagram.com/aylarr_shop1/" target="_blank" rel="noopener">مشاهده پیج اینستاگرام</a>
+</div>
+
+</div>
+
+<div class="footerBottom">
+<span>© تمام حقوق برای آیلار شاپ محفوظ است.</span>
+<span>Designed with ✦ for AYLAR SHOP</span>
+</div>
+</footer>
+
+<div class="overlay" id="overlay"></div>
+
+<aside class="drawer" id="drawer">
+<div class="drawerHead">
+<b>سبد خرید تو</b>
+<button class="close" id="closeDrawer">×</button>
+</div>
+
+<div id="cartItems"></div>
+
+<div id="cartFooter" style="display:none">
+<div class="cartTotal">
+<span>مجموع سفارش</span>
+<span id="cartTotal">۰ تومان</span>
+</div>
+<button class="primary checkout" id="checkout">ثبت سفارش از طریق اینستاگرام</button>
+<p style="font-size:10px;color:#95877b;line-height:2">ثبت سفارش نهایی و پرداخت در این نسخه از طریق سایت انجام نمی‌شود؛ برای هماهنگی به پیج اینستاگرام هدایت می‌شوی.</p>
+</div>
+</aside>
+
+<div class="modal" id="productModal">
+<div class="modalBox">
+<button class="modalClose" id="modalClose">×</button>
+<img id="modalImg" src="" alt="">
+<div class="modalContent">
+<div class="overline">AYLAR SHOP SELECTION</div>
+<h2 id="modalTitle"></h2>
+<p id="modalDesc"></p>
+<strong id="modalPrice"></strong>
+<br>
+<button class="primary" id="modalAdd" style="margin-top:22px">افزودن به سبد خرید</button>
+</div>
+</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const instagram='https://www.instagram.com/aylarr_shop1/';
+
+/* محصولات نمونه؛ نام و قیمت واقعی را جایگزین کنید */
+
+const products=[
+{
+id:1,
+name:'دستبند ظریف نگین‌دار',
+cat:'زیورآلات',
+price:485000,
+old:590000,
+tag:'پرفروش',
+img:'https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=85',
+desc:'دستبندی ظریف با جلوه‌ای درخشان؛ مناسب استایل روزمره و مهمانی.'
+},
+{
+id:2,
+name:'گوشواره مینیمال طلایی',
+cat:'زیورآلات',
+price:365000,
+old:0,
+tag:'جدید',
+img:'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=700&q=85',
+desc:'طراحی مینیمال و شیک برای تکمیل استایل‌های ساده و خاص.'
+},
+{
+id:3,
+name:'گیره موی فانتزی',
+cat:'مو و زیبایی',
+price:145000,
+old:180000,
+tag:'پیشنهاد ویژه',
+img:'https://images.unsplash.com/photo-1590548784585-643d2b9f2925?auto=format&fit=crop&w=700&q=85',
+desc:'اکسسوری مو با ظاهر فانتزی و دوست‌داشتنی.'
+},
+{
+id:4,
+name:'ست انگشتر ظریف',
+cat:'زیورآلات',
+price:520000,
+old:0,
+tag:'',
+img:'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=85',
+desc:'ترکیبی ظریف برای ساختن استایلی چشم‌نواز.'
+},
+{
+id:5,
+name:'کیف اکسسوری کوچک',
+cat:'اکسسوری',
+price:295000,
+old:340000,
+tag:'تخفیف',
+img:'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=85',
+desc:'کیفی جمع‌وجور برای همراه داشتن وسایل ضروری.'
+},
+{
+id:6,
+name:'پالت آرایشی رنگی',
+cat:'آرایشی',
+price:680000,
+old:0,
+tag:'',
+img:'https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=85',
+desc:'نمونه نمایشی محصول آرایشی؛ مشخصات و برند واقعی ر
